@@ -7,9 +7,14 @@
 
 import SwiftUI
 
+/// A SwiftUI view for an onboarding experience with video pages and navigation.
+///
+/// Displays a full-screen video player with text overlays and a "Next" button for navigation, except on the last page.
 struct OnboardingView: View {
+    /// The view model managing page data and navigation state.
     @StateObject private var viewModel = OnboardingViewModel()
     
+    /// The main view content.
     var body: some View {
         ZStack(alignment: .bottom) {
             TabView(selection: $viewModel.currentPage) {
